@@ -136,7 +136,7 @@ namespace Ordenamiento
         static void SearchElement()
         {
             Console.WriteLine("Buscando un elemento.({0} / 50)", elementos.Count);
-            Console.Write("Ingrese el elemento a modificar: ");
+            Console.Write("Ingrese el elemento a buscar: ");
             string busq = Console.ReadLine();
             if (elementos.Contains(busq) == true)
             {
