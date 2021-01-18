@@ -16,7 +16,8 @@ namespace Ordenamiento
             char lectura;
             do
             {
-                Console.WriteLine("[A]gregar elementos | [O]rdenar elementos | [M]odificar elementos | [E]liminar elementos | [V]er elementos | [B]orrar todos los elementos | [S]alir");
+                Console.WriteLine("[A]gregar elementos | [O]rdenar elementos | [M]odificar elementos | [E]liminar elementos | [V]er elementos | "
+                + " [B]orrar todos los elementos | [R]ealizar una busqueda | [S]alir");
                 Console.Write("Selecciona una opcion: ");
                 lectura = char.ToUpper(Console.ReadKey().KeyChar);
                 Console.WriteLine();
@@ -43,6 +44,9 @@ namespace Ordenamiento
                     case 'B':
                         elementos.Clear();
                         Console.WriteLine("Todos los elementos han sido eliminados... Pulse una tecla para continuar");
+                        break;
+                        case 'R':
+                        SearchElement();
                         break;
                     default:
                         break;
@@ -127,6 +131,21 @@ namespace Ordenamiento
                 elementos.AddLast(item);
             }
             Console.WriteLine("Elementos ordenados correctamente, pulsa una tecla para continuar...");
+        }
+
+        static void SearchElement()
+        {
+            Console.WriteLine("Buscando un elemento.({0} / 50)", elementos.Count);
+            Console.Write("Ingrese el elemento a modificar: ");
+            string busq = Console.ReadLine();
+            if (elementos.Contains(busq) == true)
+            {
+                Console.WriteLine("El elemento: {0} existe , pulsa una tecla para continuar...", busq);
+            }
+            else
+            {
+                Console.WriteLine("El elemento: {0} no existe en la lista, pulsa una tecla para continuar...", busq);
+            }
         }
     }
 }
